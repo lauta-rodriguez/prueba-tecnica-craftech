@@ -1,15 +1,12 @@
 #!/bin/sh
 
-if [ "$DATABASE" = "postgres" ]
-then
-    echo "Waiting for postgres..."
+# wait for Postgres container to be ready
+while ! echo exit | nc $SQL_HOST $SQL_PORT; do
+  echo "Waiting for database to be ready..."
+  sleep 1
+done
 
-    while ! nc -z $SQL_HOST $SQL_PORT; do
-      sleep 0.1
-    done
-
-    echo "PostgreSQL started"
-fi
+echo "Database is ready, proceeding with Django commands."
 
 # Uncomment below to flush db e.g. after running tests
 # Just make sure you really mean it 
