@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv(
-    "SECRET_KEY", "django-insecure-97s)x3c8w8h_qv3t3s7%)#k@dpk2edr0ed_(rq9y(rbb&_!ai%"
+    "SECRET_KEY", get_random_secret_key()
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "api",
     "api.user",
     "api.authentication",
+    "core",
 ]
 
 MIDDLEWARE = [
