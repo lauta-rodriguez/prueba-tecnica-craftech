@@ -4,7 +4,7 @@
 
 #### Prueba 1
 
-En el directorio `prueba 1` se encuentra el diagrama 1 en formato `.png` y el documento asociado en formato `.md`.
+En el directorio `prueba 1` se encuentra el diagrama de red en formato `.png` y el documento asociado en formato `.md`.
 
 #### Prueba 2
 
