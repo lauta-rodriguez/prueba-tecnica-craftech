@@ -23,7 +23,7 @@ jobs:
           docker ps
       - name: Check updated file content
         run: |
-          curl -s http://localhost:8080 | grep -oP '(?<=<h1>).*(?=</h1>)
+          curl -s http://localhost:8080 | grep -oP '(?<=<h1>).*(?=</h1>)'
       - name: Stop the container
         run: |
           docker stop $(docker ps -q)
