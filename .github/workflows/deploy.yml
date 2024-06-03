@@ -18,3 +18,12 @@ jobs:
       - name: Deploy Docker image
         run: |
           docker run -d -p 8080:80 my-nginx:latest
+      - name: Check if the container is running
+        run: |
+          docker ps
+      - name: Check updated file content
+        run: |
+          curl -s http://localhost:8080 | grep -oP '(?<=<h1>).*(?=</h1>)
+      - name: Stop the container
+        run: |
+          docker stop $(docker ps -q)
