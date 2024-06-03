@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
-      - run: |
+        run: |
           cd prueba-3
           docker build -t my-nginx:latest .
       - name: Deploy Docker image
-      - run: |
+        run: |
           docker run -d -p 8080:80 my-nginx:latest
